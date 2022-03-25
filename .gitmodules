@@ -6,3 +6,6 @@
 	url = https://github.com/lvgl/lvgl.git
 	branch = release/v7
 
+[submodule "components/lv_examples"]
+	path = components/lv_examples
+	url = https://github.com/littlevgl/lv_examples.git
