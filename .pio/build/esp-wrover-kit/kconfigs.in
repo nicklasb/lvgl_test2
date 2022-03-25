@@ -45,5 +45,6 @@ source "/Users/nicklasborjesson/.platformio/packages/framework-espidf/components
 source "/Users/nicklasborjesson/.platformio/packages/framework-espidf/components/wear_levelling/Kconfig"
 source "/Users/nicklasborjesson/.platformio/packages/framework-espidf/components/wifi_provisioning/Kconfig"
 source "/Users/nicklasborjesson/.platformio/packages/framework-espidf/components/wpa_supplicant/Kconfig"
+source "/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/components/lv_examples/Kconfig"
 source "/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/components/lvgl/Kconfig"
 source "/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/components/lvgl_esp32_drivers/Kconfig"

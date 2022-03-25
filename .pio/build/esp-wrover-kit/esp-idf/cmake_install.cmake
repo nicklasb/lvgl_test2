@@ -114,6 +114,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/.pio/build/esp-wrover-kit/esp-idf/__pio_env/cmake_install.cmake")
   include("/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/.pio/build/esp-wrover-kit/esp-idf/src/cmake_install.cmake")
   include("/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/.pio/build/esp-wrover-kit/esp-idf/lvgl/cmake_install.cmake")
+  include("/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/.pio/build/esp-wrover-kit/esp-idf/lv_examples/cmake_install.cmake")
   include("/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/.pio/build/esp-wrover-kit/esp-idf/lvgl_esp32_drivers/cmake_install.cmake")
 
 endif()

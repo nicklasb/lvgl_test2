@@ -11,6 +11,7 @@
                 "/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/include",
                 "/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/src",
                 "/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/lib",
+                "/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/components",
                 "/Users/nicklasborjesson/.platformio/packages/framework-espidf/components/esp_pm/include",
                 "/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/.pio/build/esp-wrover-kit/config",
                 "/Users/nicklasborjesson/.platformio/packages/framework-espidf/components/newlib/platform_include",
@@ -119,7 +120,7 @@
                 "/Users/nicklasborjesson/.platformio/packages/framework-espidf/components/wifi_provisioning/include",
                 "/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/components/lvgl",
                 "/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/components/lvgl/src",
-                "/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/components",
+                "/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/components/lv_examples",
                 "/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/components/lvgl_esp32_drivers",
                 "/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/components/lvgl_esp32_drivers/lvgl_tft",
                 ""
@@ -130,6 +131,7 @@
                     "/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/include",
                     "/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/src",
                     "/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/lib",
+                    "/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/components",
                     "/Users/nicklasborjesson/.platformio/packages/framework-espidf/components/esp_pm/include",
                     "/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/.pio/build/esp-wrover-kit/config",
                     "/Users/nicklasborjesson/.platformio/packages/framework-espidf/components/newlib/platform_include",
@@ -238,7 +240,7 @@
                     "/Users/nicklasborjesson/.platformio/packages/framework-espidf/components/wifi_provisioning/include",
                     "/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/components/lvgl",
                     "/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/components/lvgl/src",
-                    "/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/components",
+                    "/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/components/lv_examples",
                     "/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/components/lvgl_esp32_drivers",
                     "/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/components/lvgl_esp32_drivers/lvgl_tft",
                     ""

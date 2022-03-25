@@ -14,6 +14,7 @@
 
 #define LV_LVGL_H_INCLUDE_SIMPLE
 
+
 /* clang-format off */
 #if 1 /*Set it to "1" to enable content*/
 
@@ -672,7 +673,7 @@
  ====================*/
 
 /*Show some widget. It might be required to increase `LV_MEM_SIZE` */
-#define LV_USE_DEMO_WIDGETS        0
+#define LV_USE_DEMO_WIDGETS        1
 #if LV_USE_DEMO_WIDGETS
 #define LV_DEMO_WIDGETS_SLIDESHOW  0
 #endif

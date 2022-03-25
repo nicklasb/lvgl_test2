@@ -647,6 +647,13 @@
 /Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/.pio/build/esp-wrover-kit/esp-idf/lvgl/CMakeFiles/rebuild_cache.dir
 /Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/.pio/build/esp-wrover-kit/esp-idf/lvgl/CMakeFiles/edit_cache.dir
 /Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/.pio/build/esp-wrover-kit/esp-idf/lvgl/CMakeFiles/__idf_lvgl.dir
+/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/.pio/build/esp-wrover-kit/esp-idf/lv_examples/CMakeFiles/install/local.dir
+/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/.pio/build/esp-wrover-kit/esp-idf/lv_examples/CMakeFiles/rebuild_cache.dir
+/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/.pio/build/esp-wrover-kit/esp-idf/lv_examples/CMakeFiles/edit_cache.dir
+/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/.pio/build/esp-wrover-kit/esp-idf/lv_examples/CMakeFiles/install/strip.dir
+/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/.pio/build/esp-wrover-kit/esp-idf/lv_examples/CMakeFiles/install.dir
+/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/.pio/build/esp-wrover-kit/esp-idf/lv_examples/CMakeFiles/list_install_components.dir
+/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/.pio/build/esp-wrover-kit/esp-idf/lv_examples/CMakeFiles/__idf_lv_examples.dir
 /Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/.pio/build/esp-wrover-kit/esp-idf/lvgl_esp32_drivers/CMakeFiles/install/local.dir
 /Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/.pio/build/esp-wrover-kit/esp-idf/lvgl_esp32_drivers/CMakeFiles/install/strip.dir
 /Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/.pio/build/esp-wrover-kit/esp-idf/lvgl_esp32_drivers/CMakeFiles/install.dir
