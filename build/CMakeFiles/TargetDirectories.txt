@@ -607,3 +607,17 @@
 /Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/build/esp-idf/wifi_provisioning/CMakeFiles/install.dir
 /Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/build/esp-idf/wifi_provisioning/CMakeFiles/install/local.dir
 /Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/build/esp-idf/wifi_provisioning/CMakeFiles/install/strip.dir
+/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/build/esp-idf/lvgl/CMakeFiles/__idf_lvgl.dir
+/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/build/esp-idf/lvgl/CMakeFiles/edit_cache.dir
+/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/build/esp-idf/lvgl/CMakeFiles/rebuild_cache.dir
+/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/build/esp-idf/lvgl/CMakeFiles/list_install_components.dir
+/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/build/esp-idf/lvgl/CMakeFiles/install.dir
+/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/build/esp-idf/lvgl/CMakeFiles/install/local.dir
+/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/build/esp-idf/lvgl/CMakeFiles/install/strip.dir
+/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/build/esp-idf/lvgl_esp32_drivers/CMakeFiles/__idf_lvgl_esp32_drivers.dir
+/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/build/esp-idf/lvgl_esp32_drivers/CMakeFiles/edit_cache.dir
+/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/build/esp-idf/lvgl_esp32_drivers/CMakeFiles/rebuild_cache.dir
+/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/build/esp-idf/lvgl_esp32_drivers/CMakeFiles/list_install_components.dir
+/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/build/esp-idf/lvgl_esp32_drivers/CMakeFiles/install.dir
+/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/build/esp-idf/lvgl_esp32_drivers/CMakeFiles/install/local.dir
+/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/build/esp-idf/lvgl_esp32_drivers/CMakeFiles/install/strip.dir

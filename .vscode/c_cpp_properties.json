@@ -119,7 +119,8 @@
                 "/Users/nicklasborjesson/.platformio/packages/framework-espidf/components/spiffs/include",
                 "/Users/nicklasborjesson/.platformio/packages/framework-espidf/components/ulp/include",
                 "/Users/nicklasborjesson/.platformio/packages/framework-espidf/components/wifi_provisioning/include",
-                ""
+                "",
+                "${workspaceFolder}/components"
             ],
             "browse": {
                 "limitSymbolsToIncludedHeaders": true,

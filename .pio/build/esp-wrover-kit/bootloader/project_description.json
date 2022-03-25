@@ -1,0 +1,20 @@
+{
+    "project_name":       "bootloader",
+    "project_path":       "/Users/nicklasborjesson/.platformio/packages/framework-espidf/components/bootloader/subproject",
+    "build_dir":          "/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/.pio/build/esp-wrover-kit/bootloader",
+    "config_file":        "/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/sdkconfig.esp-wrover-kit",
+    "config_defaults":    "",
+    "app_elf":            "bootloader.elf",
+    "app_bin":            "bootloader.bin",
+    "git_revision":       "4.3.2",
+    "target":             "esp32",
+    "phy_data_partition": "",
+    "monitor_baud" :      "115200",
+    "monitor_toolprefix": "xtensa-esp32-elf-",
+    "config_environment" : {
+        "COMPONENT_KCONFIGS" : "/Users/nicklasborjesson/.platformio/packages/framework-espidf/components/efuse/Kconfig;/Users/nicklasborjesson/.platformio/packages/framework-espidf/components/esp32/Kconfig;/Users/nicklasborjesson/.platformio/packages/framework-espidf/components/esp_common/Kconfig;/Users/nicklasborjesson/.platformio/packages/framework-espidf/components/esp_system/Kconfig;/Users/nicklasborjesson/.platformio/packages/framework-espidf/components/log/Kconfig;/Users/nicklasborjesson/.platformio/packages/framework-espidf/components/newlib/Kconfig;/Users/nicklasborjesson/.platformio/packages/framework-espidf/components/spi_flash/Kconfig",
+        "COMPONENT_KCONFIGS_PROJBUILD" : "/Users/nicklasborjesson/.platformio/packages/framework-espidf/components/bootloader/Kconfig.projbuild;/Users/nicklasborjesson/.platformio/packages/framework-espidf/components/esptool_py/Kconfig.projbuild;/Users/nicklasborjesson/.platformio/packages/framework-espidf/components/partition_table/Kconfig.projbuild"
+    },
+    "build_components" : [ "bootloader", "bootloader_support", "efuse", "esp32", "esp_common", "esp_hw_support", "esp_rom", "esp_system", "esptool_py", "hal", "log", "main", "micro-ecc", "newlib", "partition_table", "soc", "spi_flash", "xtensa", "" ],
+    "build_component_paths" : [ "/Users/nicklasborjesson/.platformio/packages/framework-espidf/components/bootloader", "/Users/nicklasborjesson/.platformio/packages/framework-espidf/components/bootloader_support", "/Users/nicklasborjesson/.platformio/packages/framework-espidf/components/efuse", "/Users/nicklasborjesson/.platformio/packages/framework-espidf/components/esp32", "/Users/nicklasborjesson/.platformio/packages/framework-espidf/components/esp_common", "/Users/nicklasborjesson/.platformio/packages/framework-espidf/components/esp_hw_support", "/Users/nicklasborjesson/.platformio/packages/framework-espidf/components/esp_rom", "/Users/nicklasborjesson/.platformio/packages/framework-espidf/components/esp_system", "/Users/nicklasborjesson/.platformio/packages/framework-espidf/components/esptool_py", "/Users/nicklasborjesson/.platformio/packages/framework-espidf/components/hal", "/Users/nicklasborjesson/.platformio/packages/framework-espidf/components/log", "/Users/nicklasborjesson/.platformio/packages/framework-espidf/components/bootloader/subproject/main", "/Users/nicklasborjesson/.platformio/packages/framework-espidf/components/bootloader/subproject/components/micro-ecc", "/Users/nicklasborjesson/.platformio/packages/framework-espidf/components/newlib", "/Users/nicklasborjesson/.platformio/packages/framework-espidf/components/partition_table", "/Users/nicklasborjesson/.platformio/packages/framework-espidf/components/soc", "/Users/nicklasborjesson/.platformio/packages/framework-espidf/components/spi_flash", "/Users/nicklasborjesson/.platformio/packages/framework-espidf/components/xtensa", "" ]
+}

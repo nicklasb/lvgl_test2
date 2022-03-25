@@ -60,3 +60,5 @@
 /Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/build/esp-idf/spiffs/libspiffs.a
 /Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/build/esp-idf/ulp/libulp.a
 /Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/build/esp-idf/wifi_provisioning/libwifi_provisioning.a
+/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/build/esp-idf/lvgl/liblvgl.a
+/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/build/esp-idf/lvgl_esp32_drivers/liblvgl_esp32_drivers.a

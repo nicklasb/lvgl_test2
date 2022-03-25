@@ -112,6 +112,8 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/build/esp-idf/tinyusb/cmake_install.cmake")
   include("/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/build/esp-idf/ulp/cmake_install.cmake")
   include("/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/build/esp-idf/wifi_provisioning/cmake_install.cmake")
+  include("/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/build/esp-idf/lvgl/cmake_install.cmake")
+  include("/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/build/esp-idf/lvgl_esp32_drivers/cmake_install.cmake")
 
 endif()
 
