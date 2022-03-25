@@ -20,7 +20,7 @@
 #include "esp_system.h"
 #include "driver/gpio.h"
 
-#define CONFIG_LV_USE_DEMO_WIDGETS
+
 
 #define LV_LVGL_H_INCLUDE_SIMPLE
 
