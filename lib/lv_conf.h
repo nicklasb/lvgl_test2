@@ -12,7 +12,6 @@
  */
 
 
-#define LV_LVGL_H_INCLUDE_SIMPLE
 
 
 /* clang-format off */

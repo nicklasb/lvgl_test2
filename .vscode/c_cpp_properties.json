@@ -123,6 +123,7 @@
                 "/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/components/lv_examples",
                 "/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/components/lvgl_esp32_drivers",
                 "/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/components/lvgl_esp32_drivers/lvgl_tft",
+                "/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/components/lvgl_esp32_drivers/lvgl_touch",
                 ""
             ],
             "browse": {
@@ -243,6 +244,7 @@
                     "/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/components/lv_examples",
                     "/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/components/lvgl_esp32_drivers",
                     "/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/components/lvgl_esp32_drivers/lvgl_tft",
+                    "/Users/nicklasborjesson/Documents/PlatformIO/Projects/lvgl_test2/components/lvgl_esp32_drivers/lvgl_touch",
                     ""
                 ]
             },

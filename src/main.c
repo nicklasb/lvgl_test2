@@ -1,13 +1,18 @@
-/* LVGL Example project
+/* Boat monitoring central
  *
- * Basic project to test LVGL on ESP32 based projects.
+ * Based on the lvgl port ESP32 Example
+ * 
+ * Prerequisited:
+ * Multicolor display with touch (tested with resistive)
  *
+ * LICENSE:
  * This example code is in the Public Domain (or CC0 licensed, at your option.)
  *
  * Unless required by applicable law or agreed to in writing, this
  * software is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
  * CONDITIONS OF ANY KIND, either express or implied.
  */
+
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -21,12 +26,12 @@
 #include "driver/gpio.h"
 
 
-
-#define LV_LVGL_H_INCLUDE_SIMPLE
+/* Include lv_conf.h from the search path (it is in the lib/ directory) */
+#define LV_LVGL_H_INCLUDE_SIMPLE 1
 
 /* Littlevgl specific */
 #include "lv_conf.h"
-#include "lv_ex_conf.h"
+//#include "lv_ex_conf.h"
 #ifdef LV_LVGL_H_INCLUDE_SIMPLE
 #include "lvgl.h"
 #else
@@ -36,24 +41,10 @@
 #include "lvgl_helpers.h"
 
 
-#ifndef CONFIG_LV_TFT_DISPLAY_MONOCHROME
-    #if defined CONFIG_LV_USE_DEMO_WIDGETS
-        #include "lv_examples/src/lv_demo_widgets/lv_demo_widgets.h"
-    #elif defined CONFIG_LV_USE_DEMO_KEYPAD_AND_ENCODER
-        #include "lv_examples/src/lv_demo_keypad_encoder/lv_demo_keypad_encoder.h"
-    #elif defined CONFIG_LV_USE_DEMO_BENCHMARK
-        #include "lv_examples/src/lv_demo_benchmark/lv_demo_benchmark.h"
-    #elif defined CONFIG_LV_USE_DEMO_STRESS
-        #include "lv_examples/src/lv_demo_stress/lv_demo_stress.h"
-    #else
-        #error "No demo application selected."
-    #endif
-#endif
-
 /*********************
  *      DEFINES
  *********************/
-#define TAG "demo"
+#define TAG "Boat monitoring system"
 #define LV_TICK_PERIOD_MS 1
 
 /**********************
@@ -61,7 +52,7 @@
  **********************/
 static void lv_tick_task(void *arg);
 static void guiTask(void *pvParameter);
-static void create_demo_application(void);
+static void create_application(void);
 
 /**********************
  *   APPLICATION MAIN
@@ -79,6 +70,7 @@ void app_main() {
  * you should lock on the very same semaphore! */
 SemaphoreHandle_t xGuiSemaphore;
 
+/* This is the main GUI initialisation */
 static void guiTask(void *pvParameter) {
 
     (void) pvParameter;
@@ -92,26 +84,13 @@ static void guiTask(void *pvParameter) {
     lv_color_t* buf1 = heap_caps_malloc(DISP_BUF_SIZE * sizeof(lv_color_t), MALLOC_CAP_DMA);
     assert(buf1 != NULL);
 
-    /* Use double buffered when not working with monochrome displays */
-#ifndef CONFIG_LV_TFT_DISPLAY_MONOCHROME
-    lv_color_t* buf2 = heap_caps_malloc(DISP_BUF_SIZE * sizeof(lv_color_t), MALLOC_CAP_DMA);
-    assert(buf2 != NULL);
-#else
+    /* Do not double buffered when not working with multicolor displays */
     static lv_color_t *buf2 = NULL;
-#endif
 
     static lv_disp_buf_t disp_buf;
 
     uint32_t size_in_px = DISP_BUF_SIZE;
 
-#if defined CONFIG_LV_TFT_DISPLAY_CONTROLLER_IL3820         \
-    || defined CONFIG_LV_TFT_DISPLAY_CONTROLLER_JD79653A    \
-    || defined CONFIG_LV_TFT_DISPLAY_CONTROLLER_UC8151D     \
-    || defined CONFIG_LV_TFT_DISPLAY_CONTROLLER_SSD1306
-
-    /* Actual size in pixels, not bytes. */
-    size_in_px *= 8;
-#endif
 
     /* Initialize the working buffer depending on the selected display.
      * NOTE: buf2 == NULL when using monochrome displays. */
@@ -121,13 +100,7 @@ static void guiTask(void *pvParameter) {
     lv_disp_drv_init(&disp_drv);
     disp_drv.flush_cb = disp_driver_flush;
 
-    /* When using a monochrome display we need to register the callbacks:
-     * - rounder_cb
-     * - set_px_cb */
-#ifdef CONFIG_LV_TFT_DISPLAY_MONOCHROME
-    disp_drv.rounder_cb = disp_driver_rounder;
-    disp_drv.set_px_cb = disp_driver_set_px;
-#endif
+
 
     disp_drv.buffer = &disp_buf;
     lv_disp_drv_register(&disp_drv);
@@ -151,7 +124,7 @@ static void guiTask(void *pvParameter) {
     ESP_ERROR_CHECK(esp_timer_start_periodic(periodic_timer, LV_TICK_PERIOD_MS * 1000));
 
     /* Create the demo application */
-    create_demo_application();
+    create_application();
 
     while (1) {
         /* Delay 1 tick (assumes FreeRTOS tick is 10ms */
@@ -165,20 +138,21 @@ static void guiTask(void *pvParameter) {
     }
 
     /* A task should NEVER return */
+    /* Only free buf1, buf2 isn't used */
     free(buf1);
-#ifndef CONFIG_LV_TFT_DISPLAY_MONOCHROME
-    free(buf2);
-#endif
+
+    /* The task deletes itself 
+    It is just the initialisation task, should only be run once.
+    Passing NULL means delete the calling task.
+    */
     vTaskDelete(NULL);
 }
 
-static void create_demo_application(void)
+static void create_application(void)
 {
     /* When using a monochrome display we only show "Hello World" centered on the
      * screen */
     
-#if defined CONFIG_LV_TFT_DISPLAY_MONOCHROME || \
-    defined CONFIG_LV_TFT_DISPLAY_CONTROLLER_ST7735S
 
     /* use a pretty small demo for monochrome displays */
     /* Get the current screen  */
@@ -194,22 +168,9 @@ static void create_demo_application(void)
      * NULL means align on parent (which is the screen now)
      * 0, 0 at the end means an x, y offset after alignment*/
     lv_obj_align(label1, NULL, LV_ALIGN_CENTER, 0, 0);
-#else
-    /* Otherwise we show the selected demo */
 
-    #if defined CONFIG_LV_USE_DEMO_WIDGETS
+    //lv_demo_keypad_encoder();
 
-        lv_demo_widgets();
-    #elif defined CONFIG_LV_USE_DEMO_KEYPAD_AND_ENCODER
-        lv_demo_keypad_encoder();
-    #elif defined CONFIG_LV_USE_DEMO_BENCHMARK
-        lv_demo_benchmark();
-    #elif defined CONFIG_LV_USE_DEMO_STRESS
-        lv_demo_stress();
-    #else
-        #error "No demo application selected."
-    #endif
-#endif
 }
 
 static void lv_tick_task(void *arg) {
