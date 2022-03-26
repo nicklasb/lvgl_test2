@@ -172,7 +172,6 @@ static void create_application(void)
     lv_obj_align(label1, NULL, LV_ALIGN_CENTER, 0, 0);
     #endif
     build_ui();
-    //lv_demo_keypad_encoder();
 
 }
 
