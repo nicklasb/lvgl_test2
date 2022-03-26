@@ -40,6 +40,8 @@
 
 #include "lvgl_helpers.h"
 
+#include "ui_builder.h"
+
 
 /*********************
  *      DEFINES
@@ -153,7 +155,7 @@ static void create_application(void)
     /* When using a monochrome display we only show "Hello World" centered on the
      * screen */
     
-
+    #if 0
     /* use a pretty small demo for monochrome displays */
     /* Get the current screen  */
     lv_obj_t * scr = lv_disp_get_scr_act(NULL);
@@ -168,7 +170,8 @@ static void create_application(void)
      * NULL means align on parent (which is the screen now)
      * 0, 0 at the end means an x, y offset after alignment*/
     lv_obj_align(label1, NULL, LV_ALIGN_CENTER, 0, 0);
-
+    #endif
+    build_ui();
     //lv_demo_keypad_encoder();
 
 }
