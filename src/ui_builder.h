@@ -12,6 +12,7 @@ extern "C" {
  *      INCLUDES
  *********************/
 #include "lvgl.h"
+#include "lv_core/lv_obj.h" 
 /*********************
  *      DEFINES
  *********************/

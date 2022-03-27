@@ -19,6 +19,7 @@
 /**********************
  *  STATIC PROTOTYPES
  **********************/
+static void home_create(lv_obj_t * parent);
 static void selectors_create(lv_obj_t * parent);
 static void text_input_create(lv_obj_t * parent);
 static void msgbox_create(void);
@@ -81,37 +82,63 @@ void build_ui(void)
         if (!cur_drv) {
             break;
         }
-
-#if LV_EX_KEYBOARD
-        if (cur_drv->driver.type == LV_INDEV_TYPE_KEYPAD) {
-            lv_indev_set_group(cur_drv, g);
-        }
-#endif
-
-#if LV_EX_MOUSEWHEEL
-        if (cur_drv->driver.type == LV_INDEV_TYPE_ENCODER) {
-            lv_indev_set_group(cur_drv, g);
-        }
-#endif
     }
 
     tv = lv_tabview_create(lv_scr_act(), NULL);
     lv_obj_set_event_cb(tv, tv_event_cb);
 
-    t1 = lv_tabview_add_tab(tv, "Selectors");
-    t2 = lv_tabview_add_tab(tv, "Text input");
+    t1 = lv_tabview_add_tab(tv, "Home");
+    t2 = lv_tabview_add_tab(tv, "Safety");
+    t3 = lv_tabview_add_tab(tv, "Admin");
+    lv_group_add_obj(g, tv); 
+    lv_obj_set_drag(tv, false);  
+    home_create(t1);
+    home_create(t2);
+    home_create(t3);
+ //   selectors_create(t2);
+ //   text_input_create(t3);
 
-    lv_group_add_obj(g, tv);
-
-    selectors_create(t1);
-    text_input_create(t2);
-
-    msgbox_create();
+ //   msgbox_create();
 }
 
 /**********************
  *   STATIC FUNCTIONS
  **********************/
+
+static void home_create(lv_obj_t * parent) 
+{
+    lv_page_set_scrl_layout(parent, LV_LAYOUT_COLUMN_LEFT);
+    lv_obj_t * main_table = lv_table_create(parent,NULL);
+    lv_table_set_col_cnt(main_table, 3);
+    lv_table_set_row_cnt(main_table, 3);
+    lv_table_set_col_width(main_table, 0, 100);
+    lv_table_set_col_width(main_table, 1, 100);
+    lv_table_set_col_width(main_table, 2, 100);
+    lv_table_set_cell_value(main_table,0,0,"Waste");
+    lv_table_set_cell_value(main_table,0,1,"10L");
+    lv_table_set_cell_value(main_table,0,2,"50%");
+    // TODO: Try lv_grid instead
+    /*lv_obj_t * waste_bar = lv_bar_create(parent, NULL);
+    lv_bar_set_value(waste_bar, 40, false);
+    lv_bar_set_range(waste_bar, 0, 100);
+    */
+    lv_obj_t * waste = lv_label_create(parent, NULL);
+    lv_label_set_text(waste, "Waste 60%");   
+    lv_obj_t * water = lv_label_create(parent, NULL);
+    lv_label_set_text(water, "Water 10L / 10%");   
+    lv_obj_t * fuel = lv_label_create(parent, NULL);
+    lv_label_set_text(fuel, "Fuel - 20L/15%");   
+    lv_obj_t * power = lv_label_create(parent, NULL);
+    lv_label_set_text(power, "Power  - 1200wH/35%");   
+    lv_obj_t * testsep = lv_label_create(parent, NULL);
+    lv_obj_t * vberth = lv_label_create(parent, NULL);
+    lv_label_set_text(vberth, "V-berth - 24ºC 60%");   
+    lv_obj_t * saloon = lv_label_create(parent, NULL);
+    lv_label_set_text(saloon, "Saloon T/H - 24ºC 80%");   
+    lv_obj_t * aft = lv_label_create(parent, NULL);
+    lv_label_set_text(aft, "Aft cabin - 28ºC 70%");   
+    
+}
 
 static void selectors_create(lv_obj_t * parent)
 {
