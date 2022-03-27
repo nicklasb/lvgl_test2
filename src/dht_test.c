@@ -8,24 +8,32 @@
 #include "nvs_flash.h"
 #include "esp_log.h"
 
+#include "dht_test.h"
 
 #include "DHT22-lib-for-esp-idf/include/DHT.h"
 
 static const char *TAG = "DHT";
 
+
 void DHT_task(void *pvParameter)
 {
-    setDHTgpio(GPIO_NUM_4);
+    setDHTgpio(GPIO_NUM_0);
     ESP_LOGI(TAG, "Starting DHT Task\n\n");
 
     while (1)
     {
         ESP_LOGI(TAG, "=== Reading DHT ===\n");
+        portMUX_TYPE mutex = portMUX_INITIALIZER_UNLOCKED;
+        portENTER_CRITICAL(&mutex);
         int ret = readDHT();
+        hum = getHumidity(); 
+        temp = getTemperature(); 
+        portEXIT_CRITICAL(&mutex);
+        
 
         errorHandler(ret);
 
-        ESP_LOGI(TAG, "Hum: %.1f Tmp: %.1f\n", getHumidity(), getTemperature());
+        ESP_LOGI(TAG, "Hum: %.1f Tmp: %.1f\n", hum, temp);
 
         // -- wait at least 2 sec before reading again ------------
         // The interval of whole process must be beyond 2 seconds !!
@@ -46,5 +54,5 @@ void init_DHT()
 
     esp_log_level_set("*", ESP_LOG_INFO);
 
-    xTaskCreatePinnedToCore(&DHT_task, "DHT_task", 2048, NULL, 5, NULL, 1);
+    xTaskCreatePinnedToCore(&DHT_task, "DHT_task", 2048, NULL, 5, NULL, 0);
 }

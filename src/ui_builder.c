@@ -93,8 +93,7 @@ void build_ui(void)
     lv_group_add_obj(g, tv); 
     lv_obj_set_drag(tv, false);  
     home_create(t1);
-    home_create(t2);
-    home_create(t3);
+
  //   selectors_create(t2);
  //   text_input_create(t3);
 
@@ -131,7 +130,7 @@ static void home_create(lv_obj_t * parent)
     lv_obj_t * power = lv_label_create(parent, NULL);
     lv_label_set_text(power, "Power  - 1200wH/35%");   
     lv_obj_t * testsep = lv_label_create(parent, NULL);
-    lv_obj_t * vberth = lv_label_create(parent, NULL);
+    vberth = lv_label_create(parent, NULL);
     lv_label_set_text(vberth, "V-berth - 24ºC 60%");   
     lv_obj_t * saloon = lv_label_create(parent, NULL);
     lv_label_set_text(saloon, "Saloon T/H - 24ºC 80%");   

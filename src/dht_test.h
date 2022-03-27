@@ -1,5 +1,5 @@
 /**
- * @file ui_builder.h
+ * @file dht_test.h
  *
  */
 
@@ -11,8 +11,7 @@ extern "C" {
 /*********************
  *      INCLUDES
  *********************/
-#include "lvgl.h"
-#include "lv_core/lv_obj.h" 
+
 /*********************
  *      DEFINES
  *********************/
@@ -20,11 +19,13 @@ extern "C" {
 /**********************
  *      TYPEDEFS
  **********************/
-lv_obj_t * vberth;
+volatile float hum;
+volatile float temp;
+
 /**********************
  * GLOBAL PROTOTYPES
  **********************/
-void build_ui(void);
+void init_DHT();
 
 /**********************
  *      MACROS
@@ -33,3 +34,4 @@ void build_ui(void);
 #ifdef __cplusplus
 } /* extern "C" */
 #endif
+

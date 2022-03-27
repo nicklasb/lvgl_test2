@@ -41,7 +41,8 @@
 #include "lvgl_helpers.h"
 
 #include "ui_builder.h"
-
+#include "dht_test.h"
+#include "esp_log.h"
 
 /*********************
  *      DEFINES
@@ -65,6 +66,7 @@ void app_main() {
      * Otherwise there can be problem such as memory corruption and so on.
      * NOTE: When not using Wi-Fi nor Bluetooth you can pin the guiTask to core 0 */
     xTaskCreatePinnedToCore(guiTask, "gui", 4096*2, NULL, 0, NULL, 1);
+    init_DHT();
 }
 
 /* Creates a semaphore to handle concurrent call to lvgl stuff
@@ -128,6 +130,8 @@ static void guiTask(void *pvParameter) {
     /* Create the demo application */
     create_application();
 
+    int loop_count = 0;
+
     while (1) {
         /* Delay 1 tick (assumes FreeRTOS tick is 10ms */
         vTaskDelay(pdMS_TO_TICKS(10));
@@ -136,7 +140,19 @@ static void guiTask(void *pvParameter) {
         if (pdTRUE == xSemaphoreTake(xGuiSemaphore, portMAX_DELAY)) {
             lv_task_handler();
             xSemaphoreGive(xGuiSemaphore);
-       }
+        }
+
+        if (loop_count > 100) {
+            if (pdTRUE == xSemaphoreTake(xGuiSemaphore, portMAX_DELAY)) {
+                lv_label_set_text_fmt(vberth, "Hum: %.1f Tmp: %.1f\n", hum, temp); 
+                ESP_LOGI("UI update",  "Hum: %.1f Tmp: %.1f\n", hum, temp); 
+                xSemaphoreGive(xGuiSemaphore);
+                loop_count = 0;
+            } else {
+                ESP_LOGI("UI update", "Failed to get a semaphore");             
+            }
+        }
+       loop_count++;
     }
 
     /* A task should NEVER return */
